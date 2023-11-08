@@ -1,0 +1,27 @@
+<div class="container" *ngIf="linkValidan == true">
+    <table>
+        <tr>
+            <td>Nova lozinka</td>
+            <td>
+                <input type='text' name='lozinka_nova' [(ngModel)]='lozinka_nova'>
+            </td>
+        </tr>
+        <tr>
+            <td>Potvrdite novu lozinku</td>
+            <td>
+                <input type='text' name='lozinka_nova2' [(ngModel)]='lozinka_nova2'>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button (click)='promena_lozinke()'>Promeni lozinku</button>
+            </td>
+        </tr>
+        
+    </table>
+    <span class="error">{{errorMsg}}</span>
+</div>
+<div class="container" *ngIf="linkValidan == false">
+    <h3>Link za promenu lozinke je istekao.</h3>
+</div>
+

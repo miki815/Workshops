@@ -1,0 +1,22 @@
+{
+  "_id": "63f30988f2b77a80118539d5",
+  "naziv": "Turnir u pikadu",
+  "datum": "2023-03-03T23:00:00.000Z",
+  "mesto": "Novi Sad",
+  "opis_kratak": "Pokazi da si najbolji",
+  "opis_duzi": "Turnir se igra po sistemu eliminacije, nakon turnira obezbedjeno druzenje i dobra zabava za sve ucesnike.",
+  "glavna_slika": "../../../assets/radionicaGlavna-1676872068249.jpg",
+  "galerija_slike": [
+    "../../../assets/radionicaGalerija-1676872070956.jpg",
+    "../../../assets/radionicaGalerija-1676872070957.jpg"
+  ],
+  "organizator": "ana123",
+  "status": "aktivna",
+  "slobodnih_mesta": 20,
+  "ucesnici": [],
+  "svidjanja": [],
+  "komentari": [],
+  "zahtevi": [],
+  "caskanje": [],
+  "__v": 0
+}

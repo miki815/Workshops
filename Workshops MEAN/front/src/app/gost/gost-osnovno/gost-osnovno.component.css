@@ -1,0 +1,61 @@
+h2, h3, label, td{
+    color: white;
+    text-align: center;
+}
+
+th{
+    color:#04AA6D;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #333;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.btn{
+    background-color: #04AA6D;
+    border: 1px solid rgb(39, 87, 49);
+    display: table;
+    margin: 5px auto;
+    color: white;
+}
+
+.sort, .pretraga{
+    display: table;
+    margin: 0 auto;
+}
+
+.sortBtn{
+    background-color: #04AA6D;
+    border: 1px solid rgb(39, 87, 49);
+    color: white;
+}
+
+input{
+    display: grid;
+    justify-content: center;
+}
+
+.meni {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}

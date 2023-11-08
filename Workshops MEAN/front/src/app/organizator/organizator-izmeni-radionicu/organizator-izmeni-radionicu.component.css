@@ -1,0 +1,57 @@
+h3, li{
+    text-align: center;
+    color: white;
+    display: block;
+    margin: 0 auto;
+}
+
+h3{
+    padding: 20px;
+}
+
+.buttonA{
+    background-color: #04AA6D;
+    border: 1px solid rgb(39, 87, 49);
+    color: white;
+}
+
+.buttonR{
+    background-color: red;
+    border: 1px solid rgb(39, 87, 49);
+    color: white;
+}
+
+.buttonG{
+    background-color: #04AA6D;
+    border: 1px solid rgb(39, 87, 49);
+    color: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+}
+
+input{
+    display:block;
+    margin: 0 auto;
+}
+
+.meni {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}

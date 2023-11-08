@@ -1,0 +1,484 @@
+[{
+  "_id": {
+    "$oid": "63b873507a0f7480e77d5cbd"
+  },
+  "naziv": "fudbalska akademija",
+  "datum": {
+    "$date": {
+      "$numberLong": "1678921200000"
+    }
+  },
+  "mesto": "Beograd",
+  "status": "zavrsena",
+  "ucesnici": [
+    "joca123"
+  ],
+  "svidjanja": [
+    "joca123",
+    "pera123"
+  ],
+  "komentari": [
+    {
+      "kor_ime": "joca123",
+      "komentar": "Odlicni treneri, svidelo mi se."
+    },
+    {
+      "kor_ime": "pera123",
+      "komentar": "Super stvar, sve preporuke!"
+    }
+  ],
+  "opis_duzi": "Rad sa najboljim trenerima",
+  "opis_kratak": "Skola fudbala MM",
+  "slobodnih_mesta": 9,
+  "zahtevi": [
+    "pera123"
+  ],
+  "cekanje": [],
+  "__v": 1,
+  "caskanje": [],
+  "galerija_slike": []
+},{
+  "_id": {
+    "$oid": "63d09efc6ccba9597c45bca7"
+  },
+  "naziv": "DSC Europe 2023",
+  "datum": {
+    "$date": {
+      "$numberLong": "1699660800000"
+    }
+  },
+  "mesto": "Beograd",
+  "opis_kratak": "AI/DATA ",
+  "opis_duzi": "Najveci AI/DATA dogadjaj u Evropi i ove godine se odrzava u Beogradu. Prijavi se sto pre, broj mesta je ogranicen.",
+  "glavna_slika": "../../../assets/radionicaGlavna-1674616546650.jpg",
+  "galerija_slike": [
+    "../../../assets/radionicaGalerija-1676882548541.jpg",
+    "../../../assets/radionicaGalerija-1676882548543.jpg"
+  ],
+  "organizator": "ana123",
+  "status": "aktivna",
+  "slobodnih_mesta": 4,
+  "ucesnici": [
+    "pera1234"
+  ],
+  "svidjanja": [
+    "pera123",
+    "milos123"
+  ],
+  "komentari": [
+    {
+      "komentar": "Odlicno, sve pohvale.",
+      "vreme": {
+        "$date": {
+          "$numberLong": "1674618724049"
+        }
+      },
+      "kor_ime": "pera123",
+      "radionica": "DSC Europe 2023",
+      "slika": "..\\..\\..\\assets\\profilna-1674615495767.jpg"
+    },
+    {
+      "_id": {
+        "$oid": "63d0cffa2c32b7e0066dad5c"
+      },
+      "vreme": {
+        "$date": {
+          "$numberLong": "1674629114860"
+        }
+      },
+      "slika": "..\\..\\..\\assets\\profilna-1674615495767.jpg",
+      "kor_ime": "pera123",
+      "komentar": "Super konferencija."
+    },
+    {
+      "_id": {
+        "$oid": "63eeec0a4a18368c8c7479c0"
+      },
+      "vreme": {
+        "$date": {
+          "$numberLong": "1676602378267"
+        }
+      },
+      "slika": "..\\..\\..\\assets\\profilna-1674615495767.jpg",
+      "kor_ime": "pera123",
+      "komentar": "Prezadovoljan sam!"
+    },
+    {
+      "_id": {
+        "$oid": "63f2e5bd2ca06ec59f78c15f"
+      },
+      "vreme": {
+        "$date": {
+          "$numberLong": "1676862909769"
+        }
+      },
+      "slika": "../../../assets/profilna-1676854986372.jpg",
+      "kor_ime": "milos123",
+      "komentar": "Nadam se da ce ponovo biti super."
+    }
+  ],
+  "zahtevi": [],
+  "caskanje": [
+    {
+      "kor_ime": "pera123",
+      "poruke": [
+        {
+          "poruka": "Pozdrav, zanima me koliko dana traje konferencija?",
+          "vreme": {
+            "$date": {
+              "$numberLong": "1674618724049"
+            }
+          },
+          "salje": "pera123",
+          "radionica": "DSC Europe 2023",
+          "salje_slika": "..\\..\\..\\assets\\profilna-1674615495767.jpg",
+          "_id": {
+            "$oid": "63d0a76482e73b8a80894f75"
+          }
+        },
+        {
+          "poruka": "Takodje i koliko predavaca dolazi?",
+          "vreme": {
+            "$date": {
+              "$numberLong": "1674618789314"
+            }
+          },
+          "salje": "pera123",
+          "radionica": "DSC Europe 2023",
+          "salje_slika": "..\\..\\..\\assets\\profilna-1674615495767.jpg",
+          "_id": {
+            "$oid": "63d0a7a582e73b8a80894f78"
+          }
+        },
+        {
+          "poruka": "Bio sam prosle godine i bilo je super!",
+          "vreme": {
+            "$date": {
+              "$numberLong": "1674620332441"
+            }
+          },
+          "salje": "pera123",
+          "radionica": "DSC Europe 2023",
+          "salje_slika": "..\\..\\..\\assets\\profilna-1674615495767.jpg",
+          "_id": {
+            "$oid": "63d0adac82e73b8a80894f7c"
+          }
+        },
+        {
+          "poruka": "Pozdrav, traje 3 dana i bice preko 100 predavaca iz 40 razlicitih drzava.",
+          "vreme": {
+            "$date": {
+              "$numberLong": "1674620398006"
+            }
+          },
+          "salje": "ana123",
+          "prima": "pera123",
+          "radionica": "DSC Europe 2023",
+          "salje_slika": "..\\..\\..\\assets\\ana.jpg",
+          "_id": {
+            "$oid": "63d0adee82e73b8a80894f81"
+          }
+        }
+      ]
+    },
+    {
+      "kor_ime": "milos123",
+      "poruke": [
+        {
+          "poruka": "Pozdrav, zanima me koliko dana traje konferencija?",
+          "vreme": {
+            "$date": {
+              "$numberLong": "1676859760919"
+            }
+          },
+          "salje": "milos123",
+          "radionica": "DSC Europe 2023",
+          "salje_slika": "../../../assets/profilna-1676854986372.jpg",
+          "_id": {
+            "$oid": "63f2d9712ca06ec59f78c13a"
+          }
+        },
+        {
+          "poruka": "Takodje i koliko predavaca dolazi?",
+          "vreme": {
+            "$date": {
+              "$numberLong": "1676863441562"
+            }
+          },
+          "salje": "milos123",
+          "radionica": "DSC Europe 2023",
+          "salje_slika": "../../../assets/profilna-1676854986372.jpg",
+          "_id": {
+            "$oid": "63f2e7d12ca06ec59f78c162"
+          }
+        },
+        {
+          "poruka": "Traje 3 dana",
+          "vreme": {
+            "$date": {
+              "$numberLong": "1676872448935"
+            }
+          },
+          "salje": "ana123",
+          "prima": "milos123",
+          "radionica": "DSC Europe 2023",
+          "salje_slika": "",
+          "_id": {
+            "$oid": "63f30b00f2b77a80118539ed"
+          }
+        },
+        {
+          "poruka": "Bice oko 100 predavaca",
+          "vreme": {
+            "$date": {
+              "$numberLong": "1676872459854"
+            }
+          },
+          "salje": "ana123",
+          "prima": "milos123",
+          "radionica": "DSC Europe 2023",
+          "salje_slika": "",
+          "_id": {
+            "$oid": "63f30b0bf2b77a80118539ef"
+          }
+        },
+        {
+          "poruka": "U redu, hvala",
+          "vreme": {
+            "$date": {
+              "$numberLong": "1676875408621"
+            }
+          },
+          "salje": "milos123",
+          "radionica": "DSC Europe 2023",
+          "salje_slika": "../../../assets/profilna-1676854986372.jpg",
+          "_id": {
+            "$oid": "63f31690f2b77a8011853a56"
+          }
+        }
+      ]
+    },
+    {
+      "kor_ime": "maja123",
+      "poruke": [
+        {
+          "poruka": "Zdravo, da li ce mozda biti povecan broj mesta za ucesnike?",
+          "vreme": {
+            "$date": {
+              "$numberLong": "1676864641360"
+            }
+          },
+          "salje": "maja123",
+          "radionica": "DSC Europe 2023",
+          "_id": {
+            "$oid": "63f2ec812ca06ec59f78c17c"
+          }
+        }
+      ]
+    }
+  ],
+  "__v": 1,
+  "cekanje": [
+    "mmilenkovic815@gmail.com"
+  ]
+},{
+  "_id": {
+    "$oid": "63eee1f54a18368c8c747961"
+  },
+  "naziv": "Turnir u bilijaru",
+  "datum": {
+    "$date": {
+      "$numberLong": "1677798000000"
+    }
+  },
+  "mesto": "Beograd",
+  "opis_kratak": "Vreme je za veliki turnir u bilijaru",
+  "opis_duzi": "Obezbedjene nagrade, osvezenje i dobra zabava",
+  "galerija_slike": [],
+  "organizator": "ana123",
+  "status": "odbijena",
+  "slobodnih_mesta": 30,
+  "ucesnici": [],
+  "svidjanja": [],
+  "komentari": [],
+  "zahtevi": [],
+  "caskanje": [
+    {
+      "kor_ime": "pera123",
+      "poruke": [
+        {
+          "poruka": "Pozdrav",
+          "vreme": {
+            "$date": {
+              "$numberLong": "1676602451980"
+            }
+          },
+          "salje": "pera123",
+          "radionica": "Turnir u bilijaru",
+          "salje_slika": "..\\..\\..\\assets\\profilna-1674615495767.jpg",
+          "_id": {
+            "$oid": "63eeec544a18368c8c7479d3"
+          }
+        },
+        {
+          "poruka": "Interesuju me nagrade",
+          "vreme": {
+            "$date": {
+              "$numberLong": "1676602473999"
+            }
+          },
+          "salje": "pera123",
+          "radionica": "Turnir u bilijaru",
+          "salje_slika": "..\\..\\..\\assets\\profilna-1674615495767.jpg",
+          "_id": {
+            "$oid": "63eeec6a4a18368c8c7479d7"
+          }
+        }
+      ]
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f30988f2b77a80118539d5"
+  },
+  "naziv": "Turnir u pikadu",
+  "datum": {
+    "$date": {
+      "$numberLong": "1677884400000"
+    }
+  },
+  "mesto": "Novi Sad",
+  "opis_kratak": "Pokazi da si najbolji",
+  "opis_duzi": "Turnir se igra po sistemu eliminacije, nakon turnira obezbedjeno druzenje i dobra zabava za sve ucesnike.",
+  "glavna_slika": "../../../assets/radionicaGlavna-1676872068249.jpg",
+  "galerija_slike": [
+    "../../../assets/radionicaGalerija-1676872070956.jpg",
+    "../../../assets/radionicaGalerija-1676872070957.jpg"
+  ],
+  "organizator": "ana123",
+  "status": "aktivna",
+  "slobodnih_mesta": 20,
+  "ucesnici": [],
+  "svidjanja": [],
+  "komentari": [
+    {
+      "_id": {
+        "$oid": "63f32d601313fda9661d9858"
+      },
+      "vreme": {
+        "$date": {
+          "$numberLong": "1676881248700"
+        }
+      },
+      "slika": "../../../assets/profilna-1676876125871.jpg",
+      "kor_ime": "milos123",
+      "komentar": "Koja je cena za ucestvovanje?"
+    }
+  ],
+  "zahtevi": [
+    "milos123"
+  ],
+  "caskanje": [
+    {
+      "kor_ime": "milos123",
+      "poruke": [
+        {
+          "poruka": "Kolika je kotizacija?",
+          "vreme": {
+            "$date": {
+              "$numberLong": "1676881264207"
+            }
+          },
+          "salje": "milos123",
+          "radionica": "Turnir u pikadu",
+          "salje_slika": "../../../assets/profilna-1676876125871.jpg",
+          "_id": {
+            "$oid": "63f32d701313fda9661d985a"
+          }
+        }
+      ]
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f326fa1313fda9661d97d1"
+  },
+  "naziv": "Basket i zabava",
+  "datum": {
+    "$date": {
+      "$numberLong": "1683237600000"
+    }
+  },
+  "mesto": "Beograd",
+  "opis_kratak": "Turnir u basketu",
+  "opis_duzi": "Igra se 3 na 3, moguce prijaviti 4 igraca po ekipi",
+  "glavna_slika": "../../../assets/radionicaGlavna-1676879600832.jpg",
+  "galerija_slike": [
+    "../../../assets/radionicaGalerija-1676879604894.jpg",
+    "../../../assets/radionicaGalerija-1676879604894.jpg"
+  ],
+  "organizator": "ivan123",
+  "status": "aktivna",
+  "slobodnih_mesta": 20,
+  "ucesnici": [],
+  "svidjanja": [],
+  "komentari": [],
+  "zahtevi": [],
+  "caskanje": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f32cb71313fda9661d983b"
+  },
+  "naziv": "Bilijar vece",
+  "datum": {
+    "$date": {
+      "$numberLong": "1680472800000"
+    }
+  },
+  "mesto": "Pozarevac",
+  "opis_kratak": "Dodjite da se druzimo i uzivamo u bilijaru",
+  "opis_duzi": "Sva oprema za igranje bilijara kao i pice i hrana su obezbedjeni",
+  "glavna_slika": "../../../assets/radionicaGlavna-1676881063160.jpg",
+  "galerija_slike": [
+    "../../../assets/radionicaGalerija-1676881074041.jpg",
+    "../../../assets/radionicaGalerija-1676881074122.jpg"
+  ],
+  "organizator": "stefa123",
+  "status": "aktivna",
+  "slobodnih_mesta": 0,
+  "ucesnici": [],
+  "svidjanja": [],
+  "komentari": [],
+  "zahtevi": [],
+  "caskanje": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f32f9d1313fda9661d9872"
+  },
+  "naziv": "Kviz znanja",
+  "datum": {
+    "$date": {
+      "$numberLong": "1677798000000"
+    }
+  },
+  "mesto": "Beograd",
+  "opis_kratak": "Dodjite i okusajte se",
+  "opis_duzi": "Pitanja iz opste kulture, matematike, mozgalice",
+  "glavna_slika": "../../../assets/radionicaGlavna-1676881807919.jpg",
+  "galerija_slike": [
+    "../../../assets/radionicaGalerija-1676881817961.jpg"
+  ],
+  "organizator": "stefa123",
+  "status": "predlog",
+  "slobodnih_mesta": 30,
+  "ucesnici": [],
+  "svidjanja": [],
+  "komentari": [],
+  "zahtevi": [],
+  "caskanje": [],
+  "__v": 0
+}]

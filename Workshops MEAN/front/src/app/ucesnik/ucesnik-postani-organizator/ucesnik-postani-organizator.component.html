@@ -1,0 +1,36 @@
+<!--Meni-->
+<ul class="meniContainer">
+    <li class="meniElement"><a class="meniElement" [routerLink]="['../profil']">Profil</a></li>
+    <li class="meniElement"><a class="meniElement" [routerLink]="['../radionice']">Radionice</a></li>
+    <li class="meniElement active"><a class="meniElement" [routerLink]="['../postaniOrganizator']">Postani organizator</a></li>
+    <li class="meniElement" style="float:right"><a class="meniElement" [routerLink]="['../../']">Odjavi se</a></li>
+</ul>
+
+<h3 class="predlogTxt">Predlozite radionicu i postanite organizator</h3>
+
+<div class="predlogDiv">
+    <h3 class="predlogTxt">Predlog radionice:</h3>
+
+    <ul class="predlog">
+        <li class="predlogTxt">Naziv radionice: <input type="text" [(ngModel)]="naziv"></li>
+        <li class="predlogTxt">Mesto odrzavanja: <input type="text" [(ngModel)]="mesto"></li>
+        <li class="predlogTxt">Datum odrzavanja: <input type="text" [(ngModel)]="datum"></li>
+        <li class="predlogTxt">Kratak opis: <input type="text" [(ngModel)]="opis_kratak"></li>
+        <li class="predlogTxt">Duzi opis: <input type="text" [(ngModel)]="opis_duzi"></li>
+        <li class="predlogTxt">Slobodnih mesta: <input type="number" [(ngModel)]="slobodnih_mesta"></li>
+        <li class="predlogTxt">Glavna slika: 
+            <form enctype="multipart/form-data" (ngSubmit)="uploadImage()">
+                <input type='file' name="radionicaGlavna"  (change)='onFileSelected($event)'>
+                <button>Upload</button>
+            </form>
+        </li>
+        <li class="predlogTxt">Galerija: 
+            <form enctype="multipart/form-data" (ngSubmit)="uploadImages()">
+                <input type='file' name="radionicaGalerija"  (change)='onGalerijaFileSelected($event)' multiple>
+                <button>Upload</button>
+            </form>
+        </li>
+    </ul>
+    <button class="btnPredlog" (click)="predlogRadionice()">Predlozi radionicu</button>
+</div>
+

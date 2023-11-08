@@ -1,0 +1,61 @@
+<!--Meni-->
+<ul class="meni">
+    <li style="float:right"><a [routerLink]="['../']">Nazad</a></li>
+</ul>
+<h2>Radionice</h2>
+<div class="pretraga">
+    <label for="naziv">Unesite pojam za pretragu: </label>
+    <input type="text" name="naziv" id = "naziv" [(ngModel)]='pojam'><br/>
+    <label for="opcija">Pretraga po: </label>
+    <select [(ngModel)]='opcija' id="opcija">
+        <option value=0>Nazivu</option>
+        <option value=1>Mestu</option>
+        <option value=2>Nazivu ili mestu</option>
+    </select>
+    <br/>
+    <button  class="sortBtn" (click)='pretraga()'>Pretrazi radionice</button>
+</div>
+<br/>
+<div class="sort">
+    <button  class="sortBtn" (click)='sortDatum()'>Sortiraj po datumu odrzavanja</button>
+    <button  class="sortBtn" (click)='sortNaziv()'>Sortiraj po nazivu radionice</button>
+</div>
+<div>
+    <table>
+        <tr>
+            <th>Glavna slika</th>
+            <th>Naziv</th>
+            <th>Mesto</th>
+            <th>Datum</th>
+            <th>Info</th>
+        </tr>
+        <tr *ngFor="let r of radionice">
+            <td><img [src]="r.glavna_slika"></td>
+            <td>{{r.naziv}}</td>
+            <td>{{r.mesto}}</td>
+            <td>{{r.datum | date:"dd.MM.yyyy. HH:mm"}}</td>
+            <td>{{r.opis_kratak}}</td>
+        </tr>
+    </table>
+</div>
+<hr/>
+<div>
+    <h3>Top 5:</h3>
+    <table>
+        <tr>
+            <th>Naziv</th>
+            <th>Mesto</th>
+            <th>Datum</th>
+            <th>Info</th>
+        </tr>
+        <tr *ngFor="let r of topRadionice">
+            <td>{{r.naziv}}</td>
+            <td>{{r.mesto}}</td>
+            <td>{{r.datum | date:"dd.MM.yyyy. HH:mm"}}</td>
+            <td>{{r.opis_kratak}}</td>
+        </tr>
+    </table>
+</div>
+
+
+

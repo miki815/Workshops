@@ -1,0 +1,137 @@
+[{
+  "_id": {
+    "$oid": "63d099f875de83f19ee3c6e8"
+  },
+  "ime": "Petarp",
+  "prezime": "Petrovic",
+  "kor_ime": "pera123",
+  "lozinka": "Feb2022!",
+  "telefon": "060012",
+  "email": "mmilenkovic815@gmail.com",
+  "profilna": "..\\..\\..\\assets\\profilna-1674615495767.jpg",
+  "status": "aktivan",
+  "tip": "ucesnik"
+},{
+  "_id": {
+    "$oid": "63d099f875de83f19ee3c6e9"
+  },
+  "ime": "Ana",
+  "prezime": "Ivanovic",
+  "kor_ime": "ana123",
+  "lozinka": "ana123",
+  "telefon": "060210",
+  "email": "mmilenkovic815@gmail.com",
+  "profilna": "",
+  "status": "aktivan",
+  "tip": "organizator",
+  "organizacija": "Malodusni D.O.O"
+},{
+  "_id": {
+    "$oid": "63d099f875de83f19ee3c6ea"
+  },
+  "ime": "Mihailo",
+  "prezime": "Milenkovic",
+  "kor_ime": "miki123",
+  "lozinka": "miki123",
+  "telefon": "0600411",
+  "email": "mm190117d@student.etf.bg.ac.rs",
+  "profilna": "",
+  "status": "aktivan",
+  "tip": "ucesnik"
+},{
+  "_id": {
+    "$oid": "63d099f875de83f19ee3c6eb"
+  },
+  "ime": "admin",
+  "prezime": "admin",
+  "kor_ime": "admin",
+  "lozinka": "admin",
+  "telefon": "060012",
+  "email": "mmilenkovic815@gmail.com",
+  "profilna": "",
+  "status": "aktivan",
+  "tip": "admin"
+},{
+  "_id": {
+    "$oid": "63f2c1dc2ca06ec59f78c0d4"
+  },
+  "ime": "Milos",
+  "prezime": "Milosevic",
+  "kor_ime": "milos123",
+  "lozinka": "milos123M!",
+  "telefon": "06002345",
+  "email": "mm@gmail.com",
+  "status": "odobren",
+  "tip": "ucesnik",
+  "organizacija": "",
+  "adresa": "",
+  "maticni": "",
+  "__v": 0,
+  "profilna": "../../../assets/profilna-1676876125871.jpg"
+},{
+  "_id": {
+    "$oid": "63f2c2ab2ca06ec59f78c0d7"
+  },
+  "ime": "Luka",
+  "prezime": "Andjelkovic",
+  "kor_ime": "luka123",
+  "lozinka": "Luka123!",
+  "telefon": "060003",
+  "email": "la@gmail.com",
+  "status": "odobren",
+  "tip": "ucesnik",
+  "organizacija": "",
+  "adresa": "",
+  "maticni": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f2c4072ca06ec59f78c0da"
+  },
+  "ime": "Marija",
+  "prezime": "Milosevic",
+  "kor_ime": "maja123",
+  "lozinka": "Maja123!!!",
+  "telefon": "0601234",
+  "email": "mmilenkovic815@gmail.com",
+  "status": "odobren",
+  "tip": "ucesnik",
+  "organizacija": "",
+  "adresa": "",
+  "maticni": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f2c6f92ca06ec59f78c0de"
+  },
+  "ime": "Stefan",
+  "prezime": "Markovic",
+  "kor_ime": "stefa123",
+  "lozinka": "Stefa123!",
+  "telefon": "0600344",
+  "email": "sm@gmail.com",
+  "profilna": "../../../assets/profilna-1676854986372.jpg",
+  "status": "odobren",
+  "tip": "organizator",
+  "organizacija": "KSS",
+  "adresa": "Beograd, Balkanska 32",
+  "maticni": "12000",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63f31f041313fda9661d973d"
+  },
+  "ime": "Ivan",
+  "prezime": "Lazic",
+  "kor_ime": "ivan123",
+  "lozinka": "Ivan123!",
+  "telefon": "0601234",
+  "email": "ivanlaz815@gmail.com",
+  "profilna": "../../../assets/profilna-1676877550364.jpg",
+  "status": "odobren",
+  "tip": "organizator",
+  "organizacija": "",
+  "adresa": "",
+  "maticni": "",
+  "__v": 0
+}]

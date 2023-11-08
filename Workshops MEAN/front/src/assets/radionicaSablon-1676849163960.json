@@ -1,0 +1,29 @@
+{
+  "_id": "63b873c97a0f7480e77d5cbf",
+  "naziv": "Milenkovic Med",
+  "datum": "2024-02-19T23:00:00.000Z",
+  "mesto": "Pozarevac",
+  "status": "aktivna",
+  "ucesnici": [],
+  "svidjanja": [
+    "pera123"
+  ],
+  "komentari": [
+    {
+      "kor_ime": "pera123",
+      "komentar": "Probajte, necete se pokajati. Zdravo i ukusno!"
+    }
+  ],
+  "opis_duzi": "Dodjite i uverite se",
+  "opis_kratak": "Najbolji med",
+  "slobodnih_mesta": 100,
+  "zahtevi": [],
+  "cekanje": [
+    "mm190117d@student.etf.bg.ac.rs",
+    "mmilenkovic815@gmail.com"
+  ],
+  "__v": 1,
+  "caskanje": [],
+  "galerija_slike": [],
+  "organizator": "ana123"
+}

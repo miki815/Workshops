@@ -1,0 +1,61 @@
+<!--Meni-->
+<ul>
+    <li><a [routerLink]="['../profil']">Profil</a></li>
+    <li><a  class="active" [routerLink]="['../radionice']">Radionice</a></li>
+    <li><a [routerLink]="['../postaniOrganizator']">Postani organizator</a></li>
+    <li style="float:right"><a [routerLink]="['../../']">Odjavi se</a></li>
+</ul>
+<!--Radionice-->
+<h2 *ngIf="mojeRadionice.length > 0">Radionice na koje ste prijavljeni</h2>
+<table *ngIf="mojeRadionice.length > 0">
+    <tr>
+        <th>Radionica</th>
+        <th>Otkazi prijavu</th>
+    </tr>
+    <tr *ngFor="let r of mojeRadionice">
+        <td>{{r.naziv}}</td>
+        <td><button (click)='otkaziPrijavu(r.naziv, r.datum)'>Otkazi prijavu</button></td>
+    </tr>
+</table>
+<h2 *ngIf="mojeRadionice.length == 0">Trenutno niste prijavljeni ni na jednu radionicu.</h2>
+<hr/>
+<h2>Sve radionice</h2>
+<div class="pretraga">
+    <label for="naziv">Unesite pojam za pretragu: </label>
+    <input type="text" name="naziv" id = "naziv" [(ngModel)]='pojam'><br/>
+    <label for="opcija">Pretraga po: </label>
+    <select [(ngModel)]='opcija' id="opcija">
+        <option value=0>Nazivu</option>
+        <option value=1>Mestu</option>
+        <option value=2>Nazivu ili mestu</option>
+    </select>
+    <br/>
+    <button class="btn" (click)='pretraga()'>Pretrazi radionice</button>
+</div>
+
+<div class="sort">
+    <button class="sortBtn" (click)='sortDatum()'>Sortiraj po datumu odrzavanja</button>
+    <button class="sortBtn" (click)='sortNaziv()'>Sortiraj po nazivu radionice</button>
+</div>
+<table>
+    <tr>
+        <th>Glavna slika</th>
+        <th>Naziv</th>
+        <th>Mesto</th>
+        <th>Datum</th>
+        <th>Info</th>
+        <th>Detalji</th>
+    </tr>
+    <tr *ngFor="let r of sveRadionice">
+        <td><img [src]="r.glavna_slika" height="100px" width="150px"></td>
+        <td>{{r.naziv}}</td>
+        <td>{{r.mesto}}</td>
+        <td>{{r.datum | date:"dd.MM.yyyy. HH:mm"}}</td>
+        <td>{{r.opis_kratak}}</td>
+        <td><button (click)="detalji(r)">Detalji</button></td>
+    </tr>
+</table>
+
+
+
+

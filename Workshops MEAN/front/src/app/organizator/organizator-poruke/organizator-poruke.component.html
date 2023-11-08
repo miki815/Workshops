@@ -1,0 +1,36 @@
+<ul class="meni">
+    <li style="float:right"><a [routerLink]="['../']">Nazad</a></li>
+    <li style="float:right"><a [routerLink]="['../../']">Odjavi se</a></li>
+</ul>
+
+<h3>{{radionica.naziv}}</h3>
+<div *ngIf="radionica.caskanje.length > 0; else nema_poruka">
+    <h3>Poruke:</h3>
+    <div class="container"  *ngFor="let cet of radionica.caskanje; let i = index">
+        <h2>Ucesnik: {{cet.kor_ime}}</h2>
+        <div *ngIf="otvorenCet[i]==0">
+            <button class="btn" (click)="prikaziCet(i)">Prikazi cet</button>
+        </div>
+        <div  *ngIf="otvorenCet[i]==1">
+            <div class="container element" *ngFor="let poruka of cet.poruke">
+                <img [src]="poruka.salje_slika" alt="profilna" style="width:100%;" [class.right]="poruka.salje != ulogovan.kor_ime">
+                <span [ngClass]="poruka.salje == ulogovan.kor_ime? 'time-left':'time-right'">{{poruka.vreme | date:"dd.MM.yyyy. HH:mm"}}</span><br/>
+                <span style="color: black;" [ngClass]="poruka.salje == ulogovan.kor_ime? 'time-left':'time-right'">{{poruka.poruka}}</span>
+            </div>
+            <div class="slanje">
+                <span>Poruka: </span>
+                <input type="text" [(ngModel)]="novePoruke[i]">
+                <button  class="btn" (click)="posaljiPoruku(novePoruke[i], cet.kor_ime)"><b>Posalji</b></button>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #nema_poruka>
+    <h3>Trenutno nemate nikakve poruke za trazenu radionicu</h3>
+</ng-template>
+<!--
+<div *ngIf="radionica.caskanje.length == 0">
+    <h3>Trenutno nemate nikakve poruke za trazenu radionicu</h3>
+</div>
+-->
+

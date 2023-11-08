@@ -1,0 +1,67 @@
+<!--Meni-->
+<ul class="meni">
+    <li style="float:right"><a [routerLink]="['../']">Odjavi se</a></li>
+</ul>
+<div>
+    <h3 class="naslov">Pregled radionica</h3>
+    <table>
+        <tr>
+            <th>Glavna slika</th>
+            <th>Organizator</th>
+            <th>Naziv</th>
+            <th>Datum</th>
+            <th>Mesto</th>
+            <th>Kratak opis</th>
+            <th>Slobodnih mesta</th>
+            <th>Otkazi</th>
+            <th>Sacuvaj kao JSON</th>
+            <th>Izmeni</th>
+            <th>Pregled poruka</th>
+        </tr>
+        <tr *ngFor="let r of sveRadionice">
+            <td><img [src]="r.glavna_slika"></td>
+            <td>{{r.organizator}}</td>
+            <td>{{r.naziv}}</td>
+            <td>{{r.datum | date:"dd.MM.yyyy. HH:mm"}}</td>
+            <td>{{r.mesto}}</td>
+            <td>{{r.opis_kratak}}</td>
+            <td>{{r.slobodnih_mesta}}</td>
+            <td><button *ngIf="r.organizator == ulogovan.kor_ime" (click)="otkaziRadionicu(r.naziv)">Otkazi</button></td>
+            <td><button *ngIf="r.organizator == ulogovan.kor_ime" (click)="sacuvajJSON(r)">Sacuvaj sablon</button></td>
+            <td><button *ngIf="r.organizator == ulogovan.kor_ime" (click)="izmeniRadionicu(r)">Izmeni</button></td>
+            <td><button *ngIf="r.organizator == ulogovan.kor_ime" (click)="pregledPoruka(r)">Pregled poruka</button></td>
+        </tr>
+    </table>
+</div>
+<div class="container">
+    <h3 class="naslov">Dodaj novu radionicu</h3>
+    <ul>
+        <li>Naziv radionice: <input type="text" [(ngModel)]="novaRadionica.naziv"></li>
+        <li>Mesto odrzavanja: <input type="text" [(ngModel)]="novaRadionica.mesto"></li>
+        <li>Datum odrzavanja: <input type="text" [(ngModel)]="novaRadionica.datum"></li>
+        <li>Kratak opis: <input type="text" [(ngModel)]="novaRadionica.opis_kratak"></li>
+        <li>Duzi opis: <input type="text" [(ngModel)]="novaRadionica.opis_duzi"></li>
+        <li>Slobodnih mesta: <input type="number" [(ngModel)]="novaRadionica.slobodnih_mesta"></li>
+        <li>Glavna slika: 
+            <form enctype="multipart/form-data" (ngSubmit)="uploadImage()">
+                <input type='file' name="radionicaGlavna"  (change)='onFileSelected($event)'>
+                <button>Upload</button>
+            </form>
+        </li>
+        <li>Galerija: 
+            <form enctype="multipart/form-data" (ngSubmit)="uploadImages()">
+                <input type='file' name="radionicaGalerija"  (change)='onGalerijaFileSelected($event)' multiple>
+                <button>Upload</button>
+            </form>
+        </li>
+        <li>Ucitaj sablon:
+            <form enctype="multipart/form-data" (ngSubmit)="uploadSablon()">
+                <input type='file' name="radionicaSablon"  (change)='onJSONFileSelected($event)'>
+                <button>Upload</button>
+            </form>
+        </li>
+    </ul>
+
+
+    <button class="btn" (click)="predlogRadionice()">Dodaj radionicu</button>
+</div>

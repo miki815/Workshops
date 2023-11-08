@@ -1,0 +1,20 @@
+<!--Meni-->
+<ul class="meni">
+    <li style="float:right"><a [routerLink]="['../']">Nazad</a></li>
+</ul>
+<div class="container">
+    <table>
+        <tr>
+            <td>Email:</td>
+            <td>
+                <input type='text' name='email' [(ngModel)]='email'>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <button (click)='promena_lozinke()'>Potvrdi</button>
+            </td>
+        </tr>
+    </table>
+</div>

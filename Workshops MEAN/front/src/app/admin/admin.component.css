@@ -1,0 +1,60 @@
+.meni {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+h3, h2, th, td, li{
+    text-align: center;
+    color: white;
+}
+
+li{
+    display: block;
+    margin: 0 auto;
+}
+
+.btn{
+    background-color: #04AA6D;
+    border: 1px solid rgb(39, 87, 49);
+    display: table;
+    margin: 0 auto;
+    color: white;
+}
+
+.btnR{
+    background-color: #04AA6D;
+    border: 1px solid rgb(39, 87, 49);
+    display: table;
+    margin: 0 auto;
+    color: white;
+    margin-bottom: 50px;
+}
+
+table{
+    margin: 0 auto;
+    background-color: #333;
+}
+
+label{
+    text-align: center;
+    color: white;
+    display: block;
+    margin: 0 auto;
+}
+
+input{
+    display: block;
+    margin: 0 auto;
+}

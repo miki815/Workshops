@@ -1,0 +1,58 @@
+<!--Meni-->
+<ul>
+       <li><a [routerLink]="['../../profil']">Profil</a></li>
+       <li><a  class="active" [routerLink]="['../']">Radionice</a></li>
+       <li><a [routerLink]="['../../postaniOrganizator']">Postani organizator</a></li>
+       <li style="float:right"><a [routerLink]="['../../../']">Odjavi se</a></li>
+   </ul>
+       <!-- <p>ucesnik-radionice-detalji works!</p>
+
+        <google-map height="500px" width="100%"></google-map> 
+       -->
+
+       <h3>{{radionica.naziv}}</h3><br/>
+       <p>{{radionica.opis_duzi}}</p>
+       <button class="prijavaBtn" (click)="prijava()" *ngIf="radionica.slobodnih_mesta > 0 && prijavljen == false">Prijavi me</button><hr/>
+       <button class="prijavaBtn" (click)="obavestiMe()" *ngIf="radionica.slobodnih_mesta <= 0 && prijavljen == false">Obavesti me kada se oslobodi mesto</button>
+
+<!--Caskanje sa organizatorom-->
+<h3>Caskajte sa organizatorom</h3>
+<div class="container"  *ngFor="let p of mojePoruke">
+    <div *ngIf="p.radionica == radionica.naziv">
+       <div class="container element" *ngFor="let poruka of p.poruke">
+       <img class="profilna" [src]="poruka.salje_slika" alt="profilna" style="width:100%;" [class.right]="poruka.salje != ulogovan.kor_ime">
+       <span [ngClass]="poruka.salje == ulogovan.kor_ime? 'time-left':'time-right'">{{poruka.vreme | date:"dd.MM.yyyy. HH:mm"}}</span><br/>
+       <span style="color: black;" [ngClass]="poruka.salje == ulogovan.kor_ime? 'time-left':'time-right'">{{poruka.poruka}}</span>
+    </div>
+</div>
+</div>
+<div class="slanje">
+       <span>Poruka: </span>
+       <input type="text" [(ngModel)]="poruka">
+       <button  class="btn" (click)="posaljiPoruku(poruka)"><b>Posalji</b></button>
+</div>
+<!--Sekcija komentari i lajkovi-->
+<h3>Komentari</h3>
+<div class="heart">
+       <button *ngIf="lajk==false" (click)="lajkujRadionicu()">&#9825;</button>
+       <button *ngIf="lajk==true">&#10084;</button>
+       <span>{{radionica.svidjanja.length}}</span>
+       <button>&#9997;</button>
+       <span>{{radionica.komentari.length}}</span>
+</div>
+<div class="container">
+    <div class="container element" *ngFor="let k of radionica.komentari">
+       <img class="profilna" [src]="k.slika" alt="profilna" style="width:100%;">
+       <span class="time-left">{{k.kor_ime}},{{k.vreme | date:"dd.MM.yyyy. HH:mm"}}</span><br/>
+       <span style="color: black;" class=time-left>{{k.komentar}}</span>
+    </div>
+</div>
+<div class="slanje">
+       <span>Komentar: </span>
+       <input type="text" [(ngModel)]="komentar">
+       <button  class="btn" (click)="posaljiKomentar(komentar)"><b>Posalji</b></button>
+</div>
+<div>
+       <h3>Galerija</h3>
+       <img  class="gal" *ngFor="let slika of radionica.galerija_slike" [src]="slika"  height="300">
+</div>

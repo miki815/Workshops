@@ -1,0 +1,245 @@
+<!--Meni-->
+<ul class="meni">
+    <li style="float:right"><a [routerLink]="['../']">Odjavi se</a></li>
+</ul>
+<!--Pregled svih korisnika u sistemu, azuriranje i brisanje-->
+<h3>Korisnici</h3>
+<table>
+    <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Telefon</th>
+        <th>Email</th>
+        <th>Azuriraj</th>
+        <th>Obrisi</th>
+    </tr>
+    <tr *ngFor="let u of korisnici">
+        <td><input type="text" name="ime" [(ngModel)]='u.ime'></td>
+        <td><input type="text" name="prezime" [(ngModel)]='u.prezime'></td>
+        <td><input type="text" name="telefon" [(ngModel)]='u.telefon'></td>
+        <td><input type="text" name="email" [(ngModel)]='u.email'></td>
+        <td><button (click)="azuriraj(u)">Azuriraj</button></td>
+        <td><button (click)="obrisi(u.kor_ime)">Obrisi</button></td>
+    </tr>
+</table>
+<hr/>
+<!--Dodavanje novog korisnika u sistem-->
+<div>
+    <div>
+    <h3>Dodaj novog korisnika</h3>
+    <table>
+    <tr>
+        <td>Ime:</td>
+        <td>
+            <input type='text' name='ime' [(ngModel)]='ime'>
+        </td>
+    </tr>
+    <tr>
+        <td>Prezime:</td>
+        <td>
+            <input type='text' name='prezime' [(ngModel)]='prezime'>
+        </td>
+    </tr>
+    <tr>
+        <td>Email adresa:</td>
+        <td>
+            <input type='text' name='email' [(ngModel)]='email'>
+        </td>
+    </tr>
+    <tr>
+        <td>Korisnicko ime:</td>
+        <td>
+            <input type='text' name='kor_ime' [(ngModel)]='kor_ime'>
+        </td>
+    </tr>
+    <tr>
+        <td>Lozinka:</td>
+        <td>
+            <input type='text' name='lozinka' [(ngModel)]='lozinka'>
+        </td>
+    </tr>
+    <tr>
+        <td>Broj telefona:</td>
+        <td>
+            <input type='text' name='telefon' [(ngModel)]='telefon'>
+        </td>
+    </tr>
+    <tr>
+        <td>Tip:</td>
+        <td>
+            <select [(ngModel)]='tip'>
+                <option value="ucesnik">Ucesnik</option>
+                <option value="organizator">Organizator</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Profilna slika:</td>
+        <td>
+          <form enctype="multipart/form-data" (ngSubmit)="uploadImage()">
+                <input type='file' name="profilna"  (change)='onFileSelected($event)'>
+                <button>Upload</button>
+          </form>
+
+        </td>
+    </tr>
+</table>
+
+    </div>
+    <!--Opciona polja za organizatora-->
+    <div  *ngIf="tip == 'organizator'">
+        <table>
+        <tr>
+            <td>Naziv organizacije:</td>
+            <td>
+                <input type='text' name='organizacija' [(ngModel)]='organizacija'>
+            </td>
+        </tr>
+        <tr>
+            <td>Adresa organizacije:</td>
+            <td>
+                <input type='text' name='adresa' [(ngModel)]='adresa'>
+            </td>
+        </tr>
+        <tr>
+            <td>Maticni broj organizacije:</td>
+            <td>
+                <input type='text' name='maticni' [(ngModel)]='maticni'>
+            </td>
+        </tr>
+        </table>
+    </div>
+ 
+<button class="btn" (click)='register()'>Dodaj</button>
+<hr/>  
+</div>
+<!--Zahtevi za registracijom-->
+<h3>Zahtevi za registracijom</h3>
+<div *ngIf="korisniciCekanje.length > 0">
+    <table>
+    <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Korisnicko ime</th>
+        <th>Telefon</th>
+        <th>Email</th>
+        <th>Prihvati</th>
+        <th>Odbij</th>
+    </tr>
+    <tr *ngFor="let u of korisniciCekanje">
+        <td>{{u.ime}}</td>
+        <td>{{u.prezime}}</td>
+        <td>{{u.kor_ime}}</td>
+        <td>{{u.telefon}}</td>
+        <td>{{u.email}}</td>
+        <td><button (click)="setStatus(u.kor_ime, 'odobren')">Prihvati</button></td>
+        <td><button (click)="setStatus(u.kor_ime, 'neaktivan')">Odbij</button></td>
+    </tr>
+    </table>
+</div>
+<div *ngIf="korisniciCekanje.length == 0">
+    <h3>Trenutno nema zahteva za registracijom</h3>
+</div>
+<hr/>
+
+<!--Pregled svih radionica u sistemu, azuriranje i brisanje-->
+<div>
+    <h3>Radionice</h3>
+    <table>
+        <tr>
+            <th>Profilna</th>
+            <th>Naziv</th>
+            <th>Datum</th>
+            <th>Mesto</th>
+            <th>Kratak opis</th>
+            <th>Slobodnih mesta</th>
+            <th>Azuriraj</th>
+            <th>Obrisi</th>
+        </tr>
+
+        <tr *ngFor="let r of radioniceAktivne; let i = index">
+            <td *ngIf="azuriranje[i]==0"><img [src]="r.glavna_slika" width="150px" height="100px"></td>
+            <td *ngIf="azuriranje[i]==0">{{r.naziv}}</td>
+            <td *ngIf="azuriranje[i]==0">{{r.datum | date:"dd.MM.yyyy. HH:mm"}}</td>
+            <td *ngIf="azuriranje[i]==0">{{r.mesto}}</td>
+            <td *ngIf="azuriranje[i]==0">{{r.opis_kratak}}</td>
+            <td *ngIf="azuriranje[i]==0">{{r.slobodnih_mesta}}</td>
+            <button *ngIf="azuriranje[i]==0" (click)="azurirajRadionicu(i)">Azuriraj</button>
+            <button *ngIf="azuriranje[i]==0" (click)="obrisiRadionicu(r._id)">Obrisi</button>
+            <td *ngIf="azuriranje[i]==1"><img [src]="r.glavna_slika" width="150px" height="100px"></td>
+            <td *ngIf="azuriranje[i]==1"><input type="text" [(ngModel)]="r.naziv"></td>
+            <td *ngIf="azuriranje[i]==1"><input type="text" [(ngModel)]="r.datum"></td>
+            <td *ngIf="azuriranje[i]==1"><input type="text" [(ngModel)]="r.mesto"></td>
+            <td *ngIf="azuriranje[i]==1"><input type="text" [(ngModel)]="r.opis_kratak"></td>
+            <td *ngIf="azuriranje[i]==1"><input type="text" [(ngModel)]="r.opis_duzi"></td>
+            <td *ngIf="azuriranje[i]==1"><input type="text" [(ngModel)]="r.slobodnih_mesta"></td>
+            <button *ngIf="azuriranje[i]==1" (click)="sacuvajRadionicu(r)">Sacuvaj promene</button>
+            <button *ngIf="azuriranje[i]==1" (click)="obrisiRadionicu(r._id)">Obrisi</button>
+        </tr>
+      
+    </table>
+</div>
+<hr/>
+
+<!--Pregled radionica koje cekaju na odobrenje admina-->
+<h3>Predlozi radionica</h3>
+<div *ngIf="radionicePredlog.length > 0">
+    <table>
+        <tr>
+            <th>Glavna slika</th>
+            <th>Organizator</th>
+            <th>Naziv</th>
+            <th>Datum</th>
+            <th>Mesto</th>
+            <th>Kratak opis</th>
+            <th>Slobodnih mesta</th>
+            <th>Odobri</th>
+            <th>Odbij</th>
+        </tr>
+        <tr *ngFor="let r of radionicePredlog">
+            <td><img [src]="r.glavna_slika" width="150px" height="100px"></td>
+            <td>{{r.organizator}}</td>
+            <td>{{r.naziv}}</td>
+            <td>{{r.datum}}</td>
+            <td>{{r.mesto}}</td>
+            <td>{{r.opis_kratak}}</td>
+            <td>{{r.slobodnih_mesta}}</td>
+            <td><button (click)="setRadionicaStatus(r.naziv, r.organizator, 'aktivna')">Odobri</button></td>
+            <td><button (click)="setRadionicaStatus(r.naziv, r.organizator, 'odbijena')">Odbij</button></td>
+        </tr>
+    </table>
+</div>
+<div *ngIf="radionicePredlog.length == 0">
+    <h3>Trenutno nema radionica na cekanju</h3>
+</div>
+<hr/>
+
+<!--Dodavanje nove radionice-->
+<div>
+    <h3>Dodaj novu radionicu</h3>
+    <ul>
+        <li>Naziv radionice: <input type="text" [(ngModel)]="novaRadionica.naziv"></li>
+        <li>Mesto odrzavanja: <input type="text" [(ngModel)]="novaRadionica.mesto"></li>
+        <li>Datum odrzavanja: <input type="text" [(ngModel)]="novaRadionica.datum"></li>
+        <li>Organizator: <input type="text" [(ngModel)]="novaRadionica.organizator"></li>
+        <li>Kratak opis: <input type="text" [(ngModel)]="novaRadionica.opis_kratak"></li>
+        <li>Duzi opis: <input type="text" [(ngModel)]="novaRadionica.opis_duzi"></li>
+        <li>Slobodnih mesta: <input type="number" [(ngModel)]="novaRadionica.slobodnih_mesta"></li>
+        <li>Glavna slika: 
+            <form enctype="multipart/form-data" (ngSubmit)="uploadImageG()">
+                <input type='file' name="radionicaGlavna"  (change)='onFileSelectedG($event)'>
+                <button>Upload</button>
+            </form>
+        </li>
+        <li>Galerija: 
+            <form enctype="multipart/form-data" (ngSubmit)="uploadImages()">
+                <input type='file' name="radionicaGalerija"  (change)='onGalerijaFileSelected($event)' multiple>
+                <button>Upload</button>
+            </form>
+        </li>
+    </ul>
+
+
+    <button class="btnR" (click)="predlogRadionice()">Dodaj radionicu</button>
+</div>
+

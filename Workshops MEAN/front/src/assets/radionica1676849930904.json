@@ -1,0 +1,88 @@
+{
+  "_id": "63d09efc6ccba9597c45bca7",
+  "naziv": "DSC Europe 2023",
+  "datum": "2023-11-11T00:00:00.000Z",
+  "mesto": "Beograd",
+  "opis_kratak": "AI/DATA",
+  "opis_duzi": "Najveci AI/DATA dogadjaj u Evropi i ove godine se odrzava u Beogradu. Prijavi se sto pre, broj mesta je ogranicen.",
+  "glavna_slika": "../../../assets/radionicaGlavna-1674616546650.jpg",
+  "galerija_slike": [
+    "../../../assets/radionicaGalerija-1674616565642.jpg",
+    "../../../assets/radionicaGalerija-1674616565642.jpg",
+    "../../../assets/radionicaGalerija-1674616565643.jpg"
+  ],
+  "organizator": "ana123",
+  "status": "aktivna",
+  "slobodnih_mesta": 499,
+  "ucesnici": [
+    "pera1234"
+  ],
+  "svidjanja": [
+    "pera123"
+  ],
+  "komentari": [
+    {
+      "komentar": "Odlicno, sve pohvale.",
+      "vreme": "2023-01-25T03:52:04.049Z",
+      "kor_ime": "pera123",
+      "radionica": "DSC Europe 2023",
+      "slika": "..\\..\\..\\assets\\profilna-1674615495767.jpg"
+    },
+    {
+      "_id": "63d0cffa2c32b7e0066dad5c",
+      "vreme": "2023-01-25T06:45:14.860Z",
+      "slika": "..\\..\\..\\assets\\profilna-1674615495767.jpg",
+      "kor_ime": "pera123",
+      "komentar": "Super konferencija."
+    },
+    {
+      "_id": "63eeec0a4a18368c8c7479c0",
+      "vreme": "2023-02-17T02:52:58.267Z",
+      "slika": "..\\..\\..\\assets\\profilna-1674615495767.jpg",
+      "kor_ime": "pera123",
+      "komentar": "Prezadovoljan sam!"
+    }
+  ],
+  "zahtevi": [],
+  "caskanje": [
+    {
+      "kor_ime": "pera123",
+      "poruke": [
+        {
+          "poruka": "Pozdrav, zanima me koliko dana traje konferencija?",
+          "vreme": "2023-01-25T03:52:04.049Z",
+          "salje": "pera123",
+          "radionica": "DSC Europe 2023",
+          "salje_slika": "..\\..\\..\\assets\\profilna-1674615495767.jpg",
+          "_id": "63d0a76482e73b8a80894f75"
+        },
+        {
+          "poruka": "Takodje i koliko predavaca dolazi?",
+          "vreme": "2023-01-25T03:53:09.314Z",
+          "salje": "pera123",
+          "radionica": "DSC Europe 2023",
+          "salje_slika": "..\\..\\..\\assets\\profilna-1674615495767.jpg",
+          "_id": "63d0a7a582e73b8a80894f78"
+        },
+        {
+          "poruka": "Bio sam prosle godine i bilo je super!",
+          "vreme": "2023-01-25T04:18:52.441Z",
+          "salje": "pera123",
+          "radionica": "DSC Europe 2023",
+          "salje_slika": "..\\..\\..\\assets\\profilna-1674615495767.jpg",
+          "_id": "63d0adac82e73b8a80894f7c"
+        },
+        {
+          "poruka": "Pozdrav, traje 3 dana i bice preko 100 predavaca iz 40 razlicitih drzava.",
+          "vreme": "2023-01-25T04:19:58.006Z",
+          "salje": "ana123",
+          "prima": "pera123",
+          "radionica": "DSC Europe 2023",
+          "salje_slika": "..\\..\\..\\assets\\ana.jpg",
+          "_id": "63d0adee82e73b8a80894f81"
+        }
+      ]
+    }
+  ],
+  "__v": 0
+}

@@ -1,0 +1,114 @@
+<!--Meni-->
+<ul>
+    <li><a  class="active" [routerLink]="['../profil']">Profil</a></li>
+    <li><a [routerLink]="['../radionice']">Radionice</a></li>
+    <li><a [routerLink]="['../postaniOrganizator']">Postani organizator</a></li>
+    <li style="float:right"><a [routerLink]="['../../']">Odjavi se</a></li>
+</ul>
+<!--Podaci o profilu ucesnika sa mogucnoscu azuriranja-->
+<div> 
+    <h3>Dobrodosli, {{ulogovan.kor_ime}}</h3>
+    <h2>Vasi podaci:</h2>
+    <img class="profilna" [src]="ulogovan.profilna" alt="profilna" style="width:150px; height: 100px;">
+
+    <form enctype="multipart/form-data" (ngSubmit)="uploadImage()">
+        <input type='file' name="profilna"  (change)='onFileSelected($event)'><br/>
+        <button class="btn">Azuriraj profilnu</button><br/><br/><br/>
+    </form>
+
+    <label for="ime">Ime: </label>
+    <input type="text"  name="ime" id="ime" [(ngModel)]='imeNovo'><br/>
+    <label for="prezime">Prezime: </label>
+    <input type="text"  name="prezime" id="prezime" [(ngModel)]='prezimeNovo'><br/>
+    <label for="telefon">Telefon: </label>
+    <input type="text"  name="telefon" id="telefon" [(ngModel)]='telefonNovo'><br/>
+    <label for="email">Email: </label>
+    <input type="text"  name="email" id="email" [(ngModel)]='emailNovo'><br/>
+    <button class="btn" (click)="updateInfo()">Sacuvaj promene</button>
+</div>
+<!--Prikaz svih radionica na kojima je ucesnik ucestvovao uz mogucnost sortiranja-->
+<hr/>
+<h2>Radionice na kojima ste ucestvovali:</h2>
+<div *ngIf="radionice.length > 0">
+    <table>
+        <tr>
+            <th>Naziv<br/><button class="btn" (click)="sortBy('naziv')">sort by</button></th>
+            <th>Datum<br/><button class="btn" (click)="sortBy('datum')">sort by</button></th>
+            <th>Mesto<br/><button class="btn" (click)="sortBy('mesto')">sort by</button></th>
+            <th>Kratak opis<br/><button class="btn" (click)="sortBy('opis_kratak')">sort by</button></th>
+        </tr>
+        <tr *ngFor="let r of radionice">
+            <td>{{r.naziv}}</td>
+            <td>{{r.datum | date:"dd.MM.yyyy. HH:mm"}}</td>
+            <td>{{r.mesto}}</td>
+            <td>{{r.opis_kratak}}</td>
+        </tr>
+    </table>
+</div>
+<div *ngIf="radionice.length == 0">
+    <h3>Jos uvek niste bili ucesnik nijedne radionice.</h3>
+</div>
+<hr/>
+<!--Akcije korisnika u aplikaciji - svidjanja i komentari-->
+<div>
+    <h2>Vase akcije:</h2>
+    <div *ngIf="radioniceLajkovane.length > 0">
+        <h3>Radionice koje ste lajkovali:</h3>
+        <table>
+            <tr>
+                <th>Radionica</th>
+                <th>Povuci lajk</th>
+            </tr>
+            <tr *ngFor="let r of radioniceLajkovane">
+                <td>{{r.naziv}}</td>
+                <td><button class="btnR" (click)="povuciLajk(r.naziv)">Povuci lajk</button></td>
+            </tr>
+        </table>
+    </div>
+    <div *ngIf="radioniceLajkovane.length == 0">
+        <h3>Jos uvek niste lajkovali nijednu radionicu.</h3>
+    </div>
+    <div *ngIf="mojiKomentari.length > 0">
+        <h3>Vasi komentari:</h3>
+        <table>
+            <tr>
+                <th>Radionica</th>
+                <th>Komentar</th>
+                <th>Azuriraj</th>
+                <th>Obrisi</th>
+            </tr>
+            <tr *ngFor="let k of mojiKomentari">
+                <td>{{k.radionica}}</td>
+                <td><textarea [(ngModel)]="k.komentar" rows="4" columns="100"></textarea></td>
+                <td><button class="btn" (click)="azurirajKomentar(k.komentar, k.radionica)">Azuriraj</button></td>
+                <td><button class="btnR" (click)="obrisiKomentar(k.komentar, k.radionica)">Obrisi</button></td>
+            </tr>
+        </table>
+    </div>
+    <div *ngIf="mojiKomentari.length == 0">
+        <h3>Jos uvek niste ostavili nijedan komentar.</h3>
+    </div>
+
+</div>
+<!--Caskanje korisnika sa organizatorom-->
+<hr/>
+<h3>Caskajte sa organizatorom</h3>
+<div *ngIf="mojePoruke.length > 0">
+    <div class="container"  *ngFor="let p of mojePoruke">
+        <h3 style="color: black;">{{p.radionica}}</h3>
+        <div class="container element" *ngFor="let poruka of p.poruke">
+            <img class="cet" [src]="poruka.salje_slika" alt="profilna" style="width:100%;" [class.right]="poruka.salje != ulogovan.kor_ime">
+            <span [ngClass]="poruka.salje == ulogovan.kor_ime? 'time-left':'time-right'">{{poruka.vreme | date:"dd.MM.yyyy. HH:mm"}}</span><br/>
+            <span style="color: black;" [ngClass]="poruka.salje == ulogovan.kor_ime? 'time-left':'time-right'">{{poruka.poruka}}</span>
+        </div>
+        <div class="slanje">
+            <span>Poruka: </span>
+            <input type="text" [(ngModel)]="poruka">
+            <button  class="btn" (click)="posaljiPoruku(poruka, p.radionica)"><b>Posalji</b></button>
+        </div>
+    </div>
+</div>
+<div *ngIf="mojePoruke.length == 0">
+    <h3>Jos uvek niste zapoceli nijedno caskanje.</h3>
+</div>
+

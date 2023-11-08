@@ -1,0 +1,38 @@
+<!--Meni-->
+<ul class="meniContainer">
+    <li class="meniElement"><a class="meniElement" [routerLink]="['../ucesnik/profil']">Profil</a></li>
+    <li class="meniElement"><a class="meniElement" [routerLink]="['../radionice']">Radionice</a></li>
+    <li class="meniElement"><a class="meniElement" [routerLink]="['../postaniOrganizator']">Postani organizator</a></li>
+    <li class="meniElement" style="float:right"><a class="meniElement" [routerLink]="['../../']">Odjavi se</a></li>
+</ul>
+
+<div class="container">
+    <table>
+        <tr>
+            <td>Stara lozinka</td>
+            <td>
+                <input type='password' name='lozinka_stara' [(ngModel)]='lozinka_stara'>
+            </td>
+        </tr>
+        <tr>
+            <td>Nova lozinka</td>
+            <td>
+                <input type='password' name='lozinka_nova' [(ngModel)]='lozinka_nova'>
+            </td>
+        </tr>
+        <tr>
+            <td>Potvrdite novu lozinku</td>
+            <td>
+                <input type='password' name='lozinka_nova2' [(ngModel)]='lozinka_nova2'>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button (click)='promena_lozinke()'>Promeni lozinku</button>
+            </td>
+        </tr>
+        
+    </table>
+    <span class="error">{{errorMsg}}</span>
+</div>
+

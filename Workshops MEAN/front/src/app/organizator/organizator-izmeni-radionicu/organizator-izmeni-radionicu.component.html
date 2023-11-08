@@ -1,0 +1,46 @@
+<ul class="meni">
+    <li style="float:right"><a [routerLink]="['../']">Nazad</a></li>
+    <li style="float:right"><a [routerLink]="['../../']">Odjavi se</a></li>
+</ul>
+
+<h3>{{radionicaIzmena.naziv}}</h3>
+<hr/>
+<div>
+    <h3>Zahtevi</h3>
+    <ul>
+        <li *ngFor="let ucesnik of radionicaIzmena.zahtevi">
+            {{ucesnik}}
+            <button class="buttonA" (click)="obradaZahteva(ucesnik, 'prihvacen')">Prihvati</button>
+            <button class="buttonR" (click)="obradaZahteva(ucesnik, 'odbijen')">Odbij</button>
+        </li>
+    </ul>
+</div>
+<hr/>
+<div>
+    <h3>Izmena podataka</h3>
+    <ul>
+        <li>Naziv <input type="text" name="naziv" [(ngModel)]='radionicaIzmena.naziv'></li>
+        <li>Mesto <input type="text" name="mesto" [(ngModel)]='radionicaIzmena.mesto'></li>
+        <li>Slobodnih mesta <input type="text" name="mesta" [(ngModel)]='radionicaIzmena.slobodnih_mesta'></li>
+        <li>Kratak opis <input type="text" name="opis_kratak" [(ngModel)]='radionicaIzmena.opis_kratak'></li>
+        <li>Duzi opis <input type="text" name="opis_duzi" [(ngModel)]='radionicaIzmena.opis_duzi'></li>
+    </ul>
+</div>
+<button class="buttonG" (click)="izmeniRadionicu()">Azuriraj</button>
+
+<div>
+    <h3>Glavna slika</h3>
+    <img [src]="radionicaIzmena.glavna_slika" width="300" height="300">
+    <form enctype="multipart/form-data" (ngSubmit)="uploadImage()">
+        <input type='file' name="radionicaGlavna"  (change)='onFileSelected($event)'>
+        <button class="buttonG">Promeni glavnu sliku</button>
+    </form>
+</div>
+<div>
+    <h3>Galerija</h3>
+    <img *ngFor="let slika of radionicaIzmena.galerija_slike" [src]="slika"  height="300">
+    <form enctype="multipart/form-data" (ngSubmit)="uploadImages()">
+        <input type='file' name="radionicaGalerija"  (change)='onGalerijaFileSelected($event)' multiple>
+        <button class="buttonG">Promeni galeriju</button>
+    </form>
+</div>

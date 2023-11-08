@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="containerElement">
+        <table>
+            <tr>
+                <td>Korisnicko ime:</td>
+                <td>
+                    <input type="text" name="kor_ime" [(ngModel)]="kor_ime">
+                </td>
+            </tr>
+            <tr>
+                <td>Lozinka:</td>
+                <td>
+                    <input type="password" name="lozinka" [(ngModel)]="lozinka">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button (click)="login()">Uloguj se</button>
+                </td>
+            </tr>
+        </table>
+        <span class="error">{{errorMsg}}</span>
+    </div>
+    <hr/>
+    <span>Nemas nalog? Registruj se <a routerLink="register">ovde</a></span>
+    <hr/>
+    <span>Zaboravljena lozinka? Promeni lozinku <a routerLink="zaboravljena_lozinka">ovde</a></span>
+    <hr/>
+    <span>Nastavi kao gost <a routerLink="gost">ovde</a></span>
+<div>
+ <div class="footer">
+    <p>Univerzitet u Beogradu, Elektrotehnicki fakultet</p>
+    <p>Pia projekat</p>
+    <p>Mihailo Milenkovic 2019/0117</p>
+ </div>
